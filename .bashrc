@@ -25,3 +25,4 @@ alias emacs='emacs -nw'
 #alias dirs="dirs -p | awk 'BEGIN { count=0 } { print count \" \" \$1 } {count++}'"
 # perl dirs solution
 alias dirs="dirs -p | perl -wnl -e 'print \"\$. \$_\"'"
+
