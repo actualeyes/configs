@@ -5,12 +5,12 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 # Source work definitions
-if [ -f $HOME/lib/work_env.sh ]; then
-	. $HOME/lib/work_env.sh
+if [ -f $HOME/lib/work/work_env.sh ]; then
+	. $HOME/lib/work/work_env.sh
 fi
 
 # User specific aliases and functions
-
+export EDITOR=emacs
 # Perl environment
 export PATH=$HOME/local/bin:$PATH
 export MANPATH=$HOME/local/man:$MANPATH
@@ -25,4 +25,3 @@ alias emacs='emacs -nw'
 #alias dirs="dirs -p | awk 'BEGIN { count=0 } { print count \" \" \$1 } {count++}'"
 # perl dirs solution
 alias dirs="dirs -p | perl -wnl -e 'print \"\$. \$_\"'"
-
