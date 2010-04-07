@@ -5,6 +5,7 @@ import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 
+
 myManageHook = composeAll
     [ className =? "Gimp"      --> doFloat
     , className =? "Mplayer"   --> doFloat
