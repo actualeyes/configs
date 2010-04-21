@@ -1,14 +1,15 @@
 (setq load-path (cons "/home/apallatto/lib/emacs/" load-path))
 (require 'template-simple)
 
-
-
 (ido-mode 1)
 
 ;; set C-h to backspace
 (keyboard-translate ?\C-h ?\C-?)
+(global-set-key "\C-l" 'goto-line) ; [Ctrl]-[L] 
 ;; disable autosave
 (setq auto-save-default nil)
+
+
 
 ;; Perl stuff
 ;; M-SPC not available, window manager take it away
