@@ -1,14 +1,31 @@
 (setq load-path (cons "/home/apallatto/lib/emacs/" load-path))
 (require 'template-simple)
-
+(require 'tea-time)
 (ido-mode 1)
 
-;; set C-h to backspace
-(keyboard-translate ?\C-h ?\C-?)
+;; Global Key Definitions
 (global-set-key "\C-l" 'goto-line) ; [Ctrl]-[L] 
-;; disable autosave
-(setq auto-save-default nil)
 
+;; Global Preferences 
+(setq auto-save-default nil)
+(setq inhibit-splash-screen t)
+
+;;Org Mode
+
+(setq org-modules (quote (org-bbdb org-bibtex org-gnus org-info org-jsinfo org-habit org-irc org-mew org-mhe org-rmail org-vm org-wl org-w3m)))
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+(global-font-lock-mode 1)                     ; for all buffers
+(add-hook 'org-mode-hook 'turn-on-font-lock)  ; Org buffers only
+(setq org-log-done 'note) ;Timestamp and note  on close
+(setq org-agenda-files (list "~/lib/emacs/org/work.org"
+                             "~/lib/emacs/org/home.org"))
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
 
 
 ;; Perl stuff
@@ -56,3 +73,15 @@
                  (cperl-merge-trailing-else                  . t)
                  (cperl-tab-always-indent                    . t)))
   (cperl-set-style "PDE"))
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(org-agenda-files (quote ("~/lib/emacs/org/home.org" "~/lib/emacs/org/work.org"))))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
