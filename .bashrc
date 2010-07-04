@@ -1,5 +1,6 @@
 # .bashrc
-
+# Futurama quotes:
+function futurama() { curl -Is slashdot.org | egrep '^X-(F|B|L)' | cut -d \- -f 2; }
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -25,3 +26,7 @@ alias epochtohum="perl -e 'print scalar(localtime(\$ARGV[0])),\"\\n\"'"
 #alias dirs="dirs -p | awk 'BEGIN { count=0 } { print count \" \" \$1 } {count++}'"
 # perl dirs solution
 alias dirs="dirs -p | perl -wnl -e 'print \"\$. \$_\"'"
+
+
+# Run functions =
+futurama;
