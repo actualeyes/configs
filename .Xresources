@@ -12,5 +12,8 @@ XTerm*scrollBar: false
 XTerm*scrollKey: true
 XTerm*saveLines: 1000
 XTerm*multiClickTime: 250 
-
-
+Emacs.font: DejaVu Sans Mono-12
+Emacs.fontBackend: xft
+Emacs.menuBar: off
+Emacs.toolBar: -1
+Emacs.verticalScrollBars: off

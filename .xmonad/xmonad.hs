@@ -12,10 +12,11 @@ import System.IO
 myManageHook = composeAll
     [ className =? "Gimp"          --> doFloat
     , className =? "Mplayer"       --> doFloat
-    , className =? "Firefox"       --> doF  (W.shift "web"  )
-    , className =? "Thunderbird"   --> doF  (W.shift "mail" )
-    , className =? "Mplayer"       --> doF  (W.shift "movie")
-    , className =? "Transmission"  --> doF  (W.shift "bt"   )
+    , className =? "Firefox"       --> doF  (W.shift "web"   )
+    , className =? "Thunderbird"   --> doF  (W.shift "mail"  )
+    , className =? "Mplayer"       --> doF  (W.shift "movie" )
+    , className =? "Transmission"  --> doF  (W.shift "bt"    )
+    , className =? "Emacs"         --> doF  (W.shift "emacs" )
     ]
 
 myWide = Mirror $ Tall nmaster delta ratio
@@ -53,12 +54,12 @@ startup :: X ()
 startup = do
           spawn "firefox"
           spawn "thunderbird"
-
+          spawn "emacs"
 
 main = do
 	xmproc <- spawnPipe "/usr/local/bin/xmobar /home/apallatto/.xmobarrc"
 	xmonad $ defaultConfig { 
-                workspaces = ["web","mail","term","emacs","docs","6","movie","bt","im"],
+                workspaces = ["web","mail","emacs","term","docs","6","movie","bt","im"],
 		manageHook = myManageHook <+> manageDocks <+> manageHook defaultConfig,
 		layoutHook = avoidStruts $ mylayoutHook,
                 startupHook = startup,

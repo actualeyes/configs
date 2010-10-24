@@ -20,7 +20,7 @@ export PATH=$HOME/lib/android/tools:$PATH
 
 alias pu='pushd'
 alias po='popd'
-alias emacs='emacs -nw'
+#alias emacs='emacs -nw'
 alias epochtohum="perl -e 'print scalar(localtime(\$ARGV[0])),\"\\n\"'"
 # awk dirs solution
 #alias dirs="dirs -p | awk 'BEGIN { count=0 } { print count \" \" \$1 } {count++}'"
