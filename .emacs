@@ -1,11 +1,15 @@
 (setq load-path (cons "/home/apallatto/lib/emacs/" load-path))
+(add-to-list 'load-path "/home/apallatto/lib/emacs/imported/")
+(require 'bitlbee)
 (require 'tramp)
 (require 'template-simple)
 (require 'tea-time)
-(require 'tramp_hosts)
+(add-to-list 'load-path "/home/apallatto/lib/emacs/local/")
 (require 'org_prefs)
 (require 'perl_pref)
-(require 'bitlbee)
+(require 'tramp_hosts)
+
+
 (add-to-list 'load-path "/home/apallatto/.emacs.d/pde/")
 (load "pde-load")
 
