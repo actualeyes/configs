@@ -17,7 +17,7 @@ export PATH=$HOME/local/bin:$PATH
 export MANPATH=$HOME/local/man:$MANPATH
 # Android environment
 export PATH=$HOME/lib/android/tools:$PATH
-
+alias sudo='sudo env PATH=$PATH'
 alias pu='pushd'
 alias po='popd'
 #alias emacs='emacs -nw'

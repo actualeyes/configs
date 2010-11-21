@@ -37,8 +37,13 @@
 (setq org-link-abbrev-alist
       '(("bz" . "https://bz.cheetahmail.com/cgi-bin/show_bug.cgi?id=")))
 
-(setq org-modules (quote (org-bbdb org-bibtex org-gnus org-info org-jsinfo org-habit org-irc org-mew org-mhe org-rmail org-vm org-wl org-w3m)))
+(setq org-modules (quote
+                   (org-bbdb org-bibtex org-gnus org-info
+                    org-jsinfo org-habit org-irc org-mew
+                    org-mhe org-rmail org-vm org-wl org-w3m)))
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(setq org-agenda-custom-commands
+      '(("h" occur-tree "Habit")))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)

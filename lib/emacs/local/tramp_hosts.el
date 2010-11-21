@@ -36,7 +36,7 @@
 
 (setq tramp-default-method "ssh") 
 (add-to-list 'tramp-default-proxies-alist
-             `( "\\(p-expe1\\|p-expt1\\|p-ttb\\|p-tt12\\)" nil "/ssh2:apallatto@devt1:"))
+             `( "\\(p-exp[et][12]\\|p-ttb\\|p-tt12\\)" nil "/ssh2:apallatto@devt1:"))
 
 
 (provide 'tramp_hosts)

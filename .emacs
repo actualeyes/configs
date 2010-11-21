@@ -17,7 +17,7 @@
 ;; Global Preferences 
 (setq auto-save-default nil)
 (setq inhibit-splash-screen t)
-
+(setq-default indent-tabs-mode nil)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
