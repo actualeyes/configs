@@ -33,6 +33,7 @@
 
 (eval-when-compile
   (require 'cl))
+(require 'org-ascii)
 
 (setq org-link-abbrev-alist
       '(("bz" . "https://bz.cheetahmail.com/cgi-bin/show_bug.cgi?id=")))
@@ -55,7 +56,7 @@
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
+      '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)" "Failed(f@!)")))
 
 ;; Tags
 (setq tags-table-list
