@@ -10,6 +10,7 @@ if [ -f $HOME/lib/work/work_env.sh ]; then
 	. $HOME/lib/work/work_env.sh
 fi
 
+#export LC_ALL=ja_JP
 # User specific aliases and functions
 export EDITOR=emacs
 # Perl environment
@@ -27,6 +28,7 @@ alias epochtohum="perl -e 'print scalar(localtime(\$ARGV[0])),\"\\n\"'"
 # perl dirs solution
 alias dirs="dirs -p | perl -wnl -e 'print \"\$. \$_\"'"
 
-
+eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+# /usr/bin/luit
 # Run functions =
 futurama;

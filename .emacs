@@ -1,16 +1,20 @@
 (setq load-path (cons "/home/apallatto/lib/emacs/" load-path))
 (add-to-list 'load-path "/home/apallatto/lib/emacs/imported/")
-(require 'bitlbee)
 (require 'tramp)
-(require 'template-simple)
-(require 'tea-time)
+
+;(setq ac-dictionary-directories "/home/apallatto/lib/emacs/imported/auto-complete/dict")
+;(require 'auto-complete-config)
+;(ac-config-default)
+
 (add-to-list 'load-path "/home/apallatto/lib/emacs/local/")
 (require 'org_prefs)
-(require 'perl_pref)
-(require 'tramp_hosts)
+(require 'perl_prefs)
+(require 'tramp_prefs)
+
 
 
 (add-to-list 'load-path "/home/apallatto/.emacs.d/pde/")
+(require 'template-simple)
 (load "pde-load")
 
 (ido-mode 1)
@@ -22,6 +26,13 @@
 (setq auto-save-default nil)
 (setq inhibit-splash-screen t)
 (setq-default indent-tabs-mode nil)
+;; Set line width to 78 columns
+(setq fill-column 78)
+(setq auto-fill-mode t)
+;; default font size
+
+
+
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
@@ -31,12 +42,12 @@
  '(erc-nick "actualeyes")
  '(erc-port 6667)
  '(erc-server "localhost")
- '(org-agenda-files (quote ("~/lib/emacs/org/home.org" "~/lib/emacs/org/work.org"))))
+ '(org-agenda-files (quote ("~/Documents/Org/home.org" "~/Documents/Org/work.org"))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "green" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "green" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 
 (put 'scroll-left 'disabled nil)

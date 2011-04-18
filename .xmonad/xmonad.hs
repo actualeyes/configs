@@ -55,9 +55,10 @@ startup = do
           spawn "firefox"
           spawn "thunderbird"
           spawn "emacs"
+          spawn "thunar --daemon"
 
 main = do
-	xmproc <- spawnPipe "/usr/local/bin/xmobar /home/apallatto/.xmobarrc"
+	xmproc <- spawnPipe "/usr/bin/xmobar /home/apallatto/.xmobarrc"
 	xmonad $ defaultConfig { 
                 workspaces = ["web","mail","emacs","term","docs","6","movie","bt","im"],
 		manageHook = myManageHook <+> manageDocks <+> manageHook defaultConfig,
