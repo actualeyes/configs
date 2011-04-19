@@ -79,5 +79,5 @@
                  (cperl-tab-always-indent                    . t)))
   (cperl-set-style "PDE"))
 
-(provide 'perl_pref)
+(provide 'perl_prefs)
 ;;; perl_pref.el ends here
