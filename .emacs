@@ -14,7 +14,11 @@
 
 
 (add-to-list 'load-path "/home/apallatto/.emacs.d/pde/")
+(add-to-list 'load-path "/home/apallatto/lib/emacs/imported/emacs-jabber-0.8.0/")
+
+(require 'jabber)
 (require 'template-simple)
+
 (load "pde-load")
 
 (ido-mode 1)
@@ -41,7 +45,7 @@
   ;; If there is more than one, they won't work right.
  '(erc-nick "actualeyes")
  '(erc-port 6667)
- '(erc-server "localhost")
+ '(erc-server "irc.perl.org")
  '(org-agenda-files (quote ("~/Documents/Org/home.org" "~/Documents/Org/work.org"))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
