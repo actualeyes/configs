@@ -10,13 +10,13 @@ import System.IO
 
 
 myManageHook = composeAll
-    [ className =? "Gimp"          --> doFloat
-    , className =? "Mplayer"       --> doFloat
-    , className =? "Firefox"       --> doF  (W.shift "web"   )
-    , className =? "Thunderbird"   --> doF  (W.shift "mail"  )
-    , className =? "Mplayer"       --> doF  (W.shift "movie" )
-    , className =? "Transmission"  --> doF  (W.shift "bt"    )
-    , className =? "Emacs"         --> doF  (W.shift "emacs" )
+    [ className =? "Gimp"                --> doFloat
+    , className =? "Mplayer"             --> doFloat
+    , className =? "Google-chrome"       --> doF  (W.shift "web"   )
+    , className =? "Thunderbird"         --> doF  (W.shift "mail"  )
+    , className =? "Mplayer"             --> doF  (W.shift "movie" )
+    , className =? "Transmission"        --> doF  (W.shift "bt"    )
+    , className =? "Emacs"               --> doF  (W.shift "emacs" )
     ]
 
 myWide = Mirror $ Tall nmaster delta ratio
@@ -52,7 +52,7 @@ mylayoutHook = onWorkspace "web" myWebLayout$
 
 startup :: X ()
 startup = do
-          spawn "firefox"
+          spawn "google-chrome"
 --          spawn "thunderbird"
           spawn "emacs"
 --          spawn "thunar --daemon"
