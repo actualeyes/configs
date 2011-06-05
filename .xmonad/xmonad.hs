@@ -53,9 +53,9 @@ mylayoutHook = onWorkspace "web" myWebLayout$
 startup :: X ()
 startup = do
           spawn "firefox"
-          spawn "thunderbird"
+--          spawn "thunderbird"
           spawn "emacs"
-          spawn "thunar --daemon"
+--          spawn "thunar --daemon"
 
 main = do
 	xmproc <- spawnPipe "/usr/bin/xmobar /home/apallatto/.xmobarrc"

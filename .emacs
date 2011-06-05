@@ -9,14 +9,14 @@
 (add-to-list 'load-path "/home/apallatto/lib/emacs/local/")
 (require 'org_prefs)
 (require 'perl_prefs)
-(require 'tramp_prefs)
+;(require 'tramp_prefs)
 
 
 
 (add-to-list 'load-path "/home/apallatto/.emacs.d/pde/")
-(add-to-list 'load-path "/home/apallatto/lib/emacs/imported/emacs-jabber-0.8.0/")
+;(add-to-list 'load-path "/home/apallatto/lib/emacs/imported/emacs-jabber-0.8.0/")
 
-(require 'jabber)
+;(require 'jabber)
 (require 'template-simple)
 
 (load "pde-load")
