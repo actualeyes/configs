@@ -28,7 +28,13 @@ alias epochtohum="perl -e 'print scalar(localtime(\$ARGV[0])),\"\\n\"'"
 # perl dirs solution
 alias dirs="dirs -p | perl -wnl -e 'print \"\$. \$_\"'"
 
-eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+#eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
 # /usr/bin/luit
 # Run functions =
 futurama;
+
+export PERL_LOCAL_LIB_ROOT="/home/tpallatto/perl5";
+export PERL_MB_OPT="--install_base /home/tpallatto/perl5";
+export PERL_MM_OPT="INSTALL_BASE=/home/tpallatto/perl5";
+export PERL5LIB="/home/tpallatto/perl5/lib/perl5/x86_64-linux-thread-multi:/home/tpallatto/perl5/lib/perl5";
+export PATH="/home/tpallatto/perl5/bin:$PATH";

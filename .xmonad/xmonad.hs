@@ -12,7 +12,7 @@ import System.IO
 myManageHook = composeAll
     [ className =? "Gimp"          --> doFloat
     , className =? "Mplayer"       --> doFloat
-    , className =? "Firefox"       --> doF  (W.shift "web"   )
+    , className =? "Chromium"       --> doF  (W.shift "web"   )
     , className =? "Thunderbird"   --> doF  (W.shift "mail"  )
     , className =? "Mplayer"       --> doF  (W.shift "movie" )
     , className =? "Transmission"  --> doF  (W.shift "bt"    )
@@ -52,13 +52,11 @@ mylayoutHook = onWorkspace "web" myWebLayout$
 
 startup :: X ()
 startup = do
-          spawn "firefox"
---          spawn "thunderbird"
+          spawn "chromium"
           spawn "emacs"
---          spawn "thunar --daemon"
 
 main = do
-	xmproc <- spawnPipe "/usr/bin/xmobar /home/apallatto/.xmobarrc"
+	xmproc <- spawnPipe "/usr/bin/xmobar /home/tpallatto/.xmobarrc"
 	xmonad $ defaultConfig { 
                 workspaces = ["web","mail","emacs","term","docs","6","movie","bt","im"],
 		manageHook = myManageHook <+> manageDocks <+> manageHook defaultConfig,
