@@ -6,6 +6,7 @@ trayer --edge top --align right --SetDockType true --SetPartialStrut true \
  
 
 # Fire up appletts 
+<<<<<<< HEAD
 if [ -x /usr/bin/xscreensaver ] ; then
     xscreensaver -no-splash &
 fi

@@ -46,9 +46,6 @@ myDefLayout = noBorders Full ||| myTall ||| myWide
 mylayoutHook = onWorkspace "web" myWebLayout$
                onWorkspace "term" myTermLayout
 	       myDefLayout
-	       
-
-
 
 startup :: X ()
 startup = do
