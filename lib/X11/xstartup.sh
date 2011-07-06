@@ -6,8 +6,9 @@ trayer --edge top --align right --SetDockType true --SetPartialStrut true \
  
 
 # Fire up appletts 
-xscreensaver -no-splash &
-
+if [ -x /usr/bin/xscreensaver ] ; then
+    xscreensaver -no-splash &
+fi
 # Network Manager 
 if [ -x /usr/bin/nm-applet ] ; then
    nm-applet --sm-disable &
@@ -15,20 +16,17 @@ fi
 
 # Power Manager 
 if [ -x /usr/bin/gnome-power-manager ] ; then
-   sleep 3
    gnome-power-manager &
 fi
 
 # Input Method Switcher
 if [ -x /usr/bin/ibus-daemon ] ; then
-   sleep 3
    ibus-daemon --xim &
 fi
 
 # Volume Control 
-if [ -x /usr/bin/gnome-volume-control-applet ] ; then
-   sleep 3
-   gnome-volume-control-applet &
+if [ -x /usr/bin/gnome-sound-applet ] ; then
+   gnome-sound-applet &
 fi
 
 # Load Custom Keyboard Mapping

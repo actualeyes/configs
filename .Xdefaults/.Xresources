@@ -1,3 +1,18 @@
+XTerm*utf8: 1
+XTerm*font:     -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
+XTerm*wideFont: -misc-fixed-medium-r-normal-ja-18-120-100-100-c-180-iso10646-b1
+XTerm*background: black
+XTerm*foreground: green
+XTerm*pointerColor: red
+XTerm*pointerColorBackground: black
+XTerm*cursorColor: navy
+XTerm*internalBorder: 3
+XTerm*loginShell: true
+XTerm*scrollBar: false
+XTerm*scrollKey: true
+XTerm*saveLines: 1000
+XTerm*multiClickTime: 250
+*VT100*locale: true
 Emacs.font: DejaVu Sans Mono-12
 Emacs.fontBackend: xft
 Emacs.menuBar: off

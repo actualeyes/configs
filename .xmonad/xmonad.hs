@@ -54,7 +54,6 @@ startup :: X ()
 startup = do
           spawn "chromium"
           spawn "emacs"
-
 main = do
 	xmproc <- spawnPipe "/usr/bin/xmobar /home/tpallatto/.xmobarrc"
 	xmonad $ defaultConfig { 

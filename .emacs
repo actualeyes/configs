@@ -1,3 +1,4 @@
+(setq visible-bell 1)
 (setq load-path (cons "/home/tpallatto/lib/emacs/" load-path))
 (add-to-list 'load-path "/home/tpallatto/lib/emacs/imported/")
 (require 'tramp)
