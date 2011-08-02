@@ -53,7 +53,8 @@ startup = do
           spawn "emacs"
 main = do
 	xmproc <- spawnPipe "/usr/bin/xmobar /home/tpallatto/.xmobarrc"
-	xmonad $ defaultConfig { 
+	xmonad $ defaultConfig {
+                terminal = "/usr/bin/gnome-terminal",
                 workspaces = ["web","mail","emacs","term","docs","6","movie","bt","im"],
 		manageHook = myManageHook <+> manageDocks <+> manageHook defaultConfig,
 		layoutHook = avoidStruts $ mylayoutHook,
