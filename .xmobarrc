@@ -1,4 +1,4 @@
-Config { font = "xft:Helvetica-12"
+Config { font = "xft:Helvetica-10"
 	, bgColor = "black"
 	, fgColor = "grey"
 	, position = TopW L 85
@@ -8,6 +8,12 @@ Config { font = "xft:Helvetica-12"
                 , Run Network "eth0" ["-t", "<fc=#ffff00><dev>:</fc> <rx>|<tx>"] 10
                 , Run Network "wlan0" ["-t", "<fc=#ffff00><dev>:</fc> <rx>|<tx>"] 10
 		, Run Cpu ["-t","<fc=#ffff00>Cpu:</fc> <total>","-L","3","-H","50","--normal","green","--high","red"] 10
+                , Run BatteryP ["BAT0"] [
+                                "-t", "<fc=#ffff00>Batt:</fc> <left>% / <timeleft>",
+                                "-L","10","-H","80",
+                                "-l", "red", "-h", "green"
+                                ]
+                               50
 		, Run Memory ["-t","<fc=#ffff00>Mem:</fc> <usedratio>%"] 10
 		, Run Swap ["-t","<fc=#ffff00>Swap:</fc> <usedratio>" ] 10
 		, Run Date "%a %b %_d %l:%M" "date" 10
@@ -17,5 +23,5 @@ Config { font = "xft:Helvetica-12"
 		]
 	, sepChar = "%"
 	, alignSep = "}{"
-	, template = "%StdinReader% }{ %cpu% %memory% %swap% %eth0% %wlan0% <fc=#ee9a00>%date%</fc> %KLAX%"
+	, template = "%StdinReader% }{ %battery% %cpu% %memory% %swap% %eth0% %wlan0% <fc=#ee9a00>%date%</fc> %KLAX%"
        }
