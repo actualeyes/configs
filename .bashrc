@@ -33,8 +33,8 @@ alias dirs="dirs -p | perl -wnl -e 'print \"\$. \$_\"'"
 # Run functions =
 futurama;
 
-export PERL_LOCAL_LIB_ROOT="/home/tpallatto/perl5";
-export PERL_MB_OPT="--install_base /home/tpallatto/perl5";
-export PERL_MM_OPT="INSTALL_BASE=/home/tpallatto/perl5";
-export PERL5LIB="/home/tpallatto/perl5/lib/perl5/x86_64-linux-thread-multi:/home/tpallatto/perl5/lib/perl5";
-export PATH="/home/tpallatto/perl5/bin:$PATH";
+export PERL_LOCAL_LIB_ROOT="/home/apallatto/perl5";
+export PERL_MB_OPT="--install_base /home/apallatto/perl5";
+export PERL_MM_OPT="INSTALL_BASE=/home/apallatto/perl5";
+export PERL5LIB="/home/apallatto/perl5/lib/perl5/x86_64-linux-thread-multi:/home/apallatto/perl5/lib/perl5";
+export PATH="/home/apallatto/perl5/bin:$PATH";

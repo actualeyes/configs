@@ -7,7 +7,7 @@ Config { font = "xft:Helvetica-10"
                   Run Weather "KLAX" ["-t"," <tempF>F","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
                 , Run Network "eth0" ["-t", "<fc=#ffff00><dev>:</fc> <rx>|<tx>"] 10
                 , Run Network "wlan0" ["-t", "<fc=#ffff00><dev>:</fc> <rx>|<tx>"] 10
-		, Run Cpu ["-t","<fc=#ffff00>Cpu:</fc> <total>","-L","3","-H","50","--normal","green","--high","red"] 10
+		, Run MultiCpu ["-t","<fc=#ffff00>Cpu:</fc> <total>","-L","3","-H","50","--normal","green","--high","red"] 10
                 , Run BatteryP ["BAT0"] [
                                 "-t", "<fc=#ffff00>Batt:</fc> <left>% / <timeleft>",
                                 "-L","10","-H","80",
@@ -23,5 +23,5 @@ Config { font = "xft:Helvetica-10"
 		]
 	, sepChar = "%"
 	, alignSep = "}{"
-	, template = "%StdinReader% }{ %battery% %cpu% %memory% %swap% %eth0% %wlan0% <fc=#ee9a00>%date%</fc> %KLAX%"
+	, template = "%StdinReader% }{ %battery% %multicpu% %memory% %swap% %eth0% %wlan0% <fc=#ee9a00>%date%</fc> %KLAX%"
        }

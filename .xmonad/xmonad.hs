@@ -51,8 +51,9 @@ startup :: X ()
 startup = do
           spawn "chromium"
           spawn "emacs"
+          spawn "nm-applet --sm-disable &"
 main = do
-	xmproc <- spawnPipe "/usr/bin/xmobar /home/tpallatto/.xmobarrc"
+	xmproc <- spawnPipe "/usr/bin/xmobar /home/apallatto/.xmobarrc"
 	xmonad $ defaultConfig {
                 terminal = "/usr/bin/gnome-terminal",
                 workspaces = ["web","mail","emacs","term","docs","6","movie","bt","im"],
@@ -67,6 +68,7 @@ main = do
 		} `additionalKeys`
 		[ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock"),
 		  ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s"),
-		  ((0, xK_Print), spawn "scrot")
+		  ((0, xK_Print), spawn "scrot"),
+                  ((mod4Mask, xK_p), spawn "dmenu_run")
 		]
 

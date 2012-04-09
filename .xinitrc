@@ -16,21 +16,26 @@ fi
 xsetroot -cursor_name left_ptr
 xrdb -merge ~/.Xresources
 
-export XMODIFIERS=@im=ibus
-export GTK_IM_MODULE="ibus"
+export XMODIFIERS=@im=uim
+export GTK_IM_MODULE="uim"
 trayer --edge top --align right --SetDockType true --SetPartialStrut true \
  --expand true --width 8 --transparent true --tint 0x191970 --height 12 &
- 
+
+if [ -x /usr/bin/uim-xim ] ; then
+   uim-xim &
+fi
+
+
+
+if [ -x /usr/bin/uim-toolbar-gtk-systray ] ; then
+   uim-toolbar-gtk-systray &
+fi
 
 # Launch Commands
 
 # Screensaver 
 if [ -x /usr/bin/xscreensaver ] ; then
     xscreensaver -no-splash &
-fi
-# Network Manager 
-if [ -x /usr/bin/nm-applet ] ; then
-   nm-applet --sm-disable &
 fi
 
 # Power Manager 
@@ -44,8 +49,8 @@ if [ -x /usr/bin/ibus-daemon ] ; then
 fi
 
 # Volume Control 
-if [ -x /usr/bin/volumeicon ] ; then
-   volumeicon &
+if [ -x /usr/bin/volwheel ] ; then
+   volwheel &
 fi
 
 # Load Custom Keyboard Mapping
@@ -53,4 +58,10 @@ if [ -f $HOME/lib/X11/Xmodmap ]; then
     /usr/bin/xmodmap $HOME/lib/X11/Xmodmap
 fi
 
-exec xmonad
+exec ck-launch-session xmonad
+
+# # Network Manager 
+# if [ -x /usr/bin/nm-applet ] ; then
+#    nm-applet --sm-disable &
+# fi
+
