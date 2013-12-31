@@ -12,54 +12,59 @@ import System.IO
 myManageHook = composeAll
     [ className =? "Gimp"          --> doFloat
     , className =? "Mplayer"       --> doFloat
-    , className =? "Chromium"       --> doF  (W.shift "web"   )
-    , className =? "Thunderbird"   --> doF  (W.shift "mail"  )
+    , className =? "Chromium"      --> doF  (W.shift "web"   )
+    , title     =? "WebConsole"    --> doF  (W.shift "web"   )
     , className =? "Mplayer"       --> doF  (W.shift "movie" )
     , className =? "Transmission"  --> doF  (W.shift "bt"    )
     , className =? "Emacs"         --> doF  (W.shift "emacs" )
+    , className =? "EmacsConsole"  --> doF  (W.shift "emacs" )
+    , title     =? "Buddy List"    --> doF  (W.shift "im"    )
+    , title     =? "watercooler"   --> doF  (W.shift "im"    )
+    , title     =? "Org"           --> doF  (W.shift "org"   )
+    , className =? "Thunderbird"   --> doF  (W.shift "mail"  )
+    , className =? "Keepassx"      --> doF  (W.shift "keys")
+    , className =? "trayer"        --> doIgnore
     ]
 
 myWide = Mirror $ Tall nmaster delta ratio
     where
-        -- The default number of windows in the master pane
+        -- Default number of windows
         nmaster = 1
-        -- Percent of screen to increment by when resizing panes
+        -- Increment Level
         delta   = 3/100
-        -- Default proportion of screen occupied by master pane
+        -- Default proportion of master pane    
+
         ratio   = 80/100
 
 myTall = Tall nmaster delta ratio
     where
-        -- The default number of windows in the master pane
+        -- Default number of windows
         nmaster = 1
-        -- Percent of screen to increment by when resizing panes
+        -- increment level
         delta   = 3/100
-        -- Default proportion of screen occupied by master pane
-        ratio   = 80/100
+        -- Default proportion of master pane
+        ratio   = 70/100
 
 
 
-myWebLayout = noBorders Full ||| myWide 
+myWebLayout =  myTall ||| myWide ||| noBorders Full
+myEmacsLayout =  myTall ||| myWide ||| noBorders Full
 myTermLayout = noBorders Full ||| myTall
 myDefLayout = noBorders Full ||| myTall ||| myWide 
 
 mylayoutHook = onWorkspace "web" myWebLayout$
-               onWorkspace "term" myTermLayout
+               onWorkspace "term" myTermLayout$
+               onWorkspace "emacs" myEmacsLayout$
 	       myDefLayout
 
-startup :: X ()
-startup = do
-          spawn "chromium"
-          spawn "emacs"
-          spawn "nm-applet --sm-disable &"
+
 main = do
 	xmproc <- spawnPipe "/usr/bin/xmobar /home/apallatto/.xmobarrc"
 	xmonad $ defaultConfig {
-                terminal = "/usr/bin/gnome-terminal",
-                workspaces = ["web","mail","emacs","term","docs","6","movie","bt","im"],
+                terminal = "/usr/bin/urxvt",
+                workspaces = ["main","web","emacs","term","docs","org","movie","keys","im"],
 		manageHook = myManageHook <+> manageDocks <+> manageHook defaultConfig,
 		layoutHook = avoidStruts $ mylayoutHook,
-                startupHook = startup,
 		logHook = dynamicLogWithPP $ xmobarPP { 
 			ppOutput = hPutStrLn xmproc,
                         ppTitle = xmobarColor "green" "" . shorten 50
