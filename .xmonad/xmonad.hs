@@ -17,10 +17,10 @@ myManageHook = composeAll
     , className =? "Mplayer"       --> doF  (W.shift "movie" )
     , className =? "Transmission"  --> doF  (W.shift "bt"    )
     , className =? "Emacs"         --> doF  (W.shift "emacs" )
-    , className =? "EmacsConsole"  --> doF  (W.shift "emacs" )
+    , title     =? "EmacsConsole"  --> doF  (W.shift "emacs" )
+    , title     =? "Org"           --> doF  (W.shift "org" )
     , title     =? "Buddy List"    --> doF  (W.shift "im"    )
     , title     =? "watercooler"   --> doF  (W.shift "im"    )
-    , title     =? "Org"           --> doF  (W.shift "org"   )
     , className =? "Thunderbird"   --> doF  (W.shift "mail"  )
     , className =? "Keepassx"      --> doF  (W.shift "keys")
     , className =? "trayer"        --> doIgnore
@@ -47,8 +47,8 @@ myTall = Tall nmaster delta ratio
 
 
 
-myWebLayout =  myTall ||| myWide ||| noBorders Full
-myEmacsLayout =  myTall ||| myWide ||| noBorders Full
+myWebLayout =  myTall ||| myWide |||  Full
+myEmacsLayout =  myTall ||| myWide ||| Full
 myTermLayout = noBorders Full ||| myTall
 myDefLayout = noBorders Full ||| myTall ||| myWide 
 
@@ -61,7 +61,7 @@ mylayoutHook = onWorkspace "web" myWebLayout$
 main = do
 	xmproc <- spawnPipe "/usr/bin/xmobar /home/apallatto/.xmobarrc"
 	xmonad $ defaultConfig {
-                terminal = "/usr/bin/urxvt",
+                terminal = "/usr/bin/xterm",
                 workspaces = ["main","web","emacs","term","docs","org","movie","keys","im"],
 		manageHook = myManageHook <+> manageDocks <+> manageHook defaultConfig,
 		layoutHook = avoidStruts $ mylayoutHook,

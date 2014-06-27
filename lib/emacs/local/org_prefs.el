@@ -51,16 +51,17 @@
 (global-font-lock-mode 1)                     ; for all buffers
 (add-hook 'org-mode-hook 'turn-on-font-lock)  ; Org buffers only
 (setq org-log-done 'note) ;Timestamp and note  on close
-(setq org-agenda-files (list "~/lib/emacs/org/work.org"
-                             "~/lib/emacs/org/home.org"))
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 (setq org-todo-keywords
       '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)" "Failed(f@!)")))
 
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
+(setq org-directory "~/Documents/Org/")
+(setq org-mobile-inbox-for-pull "~/Documents/Org/Pulled.org")
 ;; Tags
-(setq tags-table-list
-'("/ssh:devt1.cheetahmail.com:/home/apallatto/git/ops_devel/TAGS"))
+;; (setq tags-table-list
+;; '("/ssh:devt1.cheetahmail.com:/home/apallatto/git/ops_devel/TAGS"))
 
 
 (provide 'org_prefs)

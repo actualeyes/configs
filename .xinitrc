@@ -42,6 +42,10 @@ if [ -x /usr/bin/uim-toolbar-gtk-systray ] ; then
 fi
 
 # Launch Commands
+# Org
+if [ -x /usr/bin/emacs ] ; then
+    emacs -f org-agenda-list  -T Org &
+fi
 
 # Conky
 if [ -x /usr/bin/conky ] ; then
@@ -75,8 +79,6 @@ fi
 
 if [ -x /usr/bin/emacs ] ; then
     emacs &
-    emacs -f org-agenda-list  -T Org &
-#    emacs -f erc-bitlbee -T bitlbee &
 fi
 
 if [ -x /usr/bin/pidgin ] ; then
@@ -87,14 +89,12 @@ if [ -x /usr/bin/keepassx ] ; then
     keepassx &
 fi
 
-
-
 if [ -x /usr/bin/chromium ] ; then
     chromium &
 fi
-if [ -x /usr/bin/urxvt ] ; then
-    urxvt -name WebConsole &
-    urxvt -name EmacsConsole &
+if [ -x /usr/bin/xterm ] ; then
+    xterm -name WebConsole &
+    xterm -name EmacsConsole &
 fi
 
 

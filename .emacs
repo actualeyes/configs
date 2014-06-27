@@ -1,5 +1,9 @@
 (setq visible-bell 1)
 
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+
 
 (setq load-path (cons "/home/apallatto/lib/emacs/" load-path))
 (add-to-list 'load-path "/home/apallatto/lib/emacs/imported/")
@@ -47,7 +51,7 @@
 ;;(load "/usr/share/emacs/site-lisp/haskell-mode/haskell-site-file")
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 
 
@@ -62,7 +66,7 @@
  '(erc-nick "actualeyes")
  '(erc-port 6667)
  '(erc-server "localhost")
- '(org-agenda-files (quote ("~/Documents/Org/webspace_properties.org" "~/Documents/Org/Pulled.org" "~/Documents/Org/projects.org" "~/Documents/Org/work.org" "~/Documents/Org/home.org"))))
+ '(org-agenda-files (quote ("~/Documents/Org/Pulled.org" "~/Documents/Org/projects.org" "~/Documents/Org/work.org" "~/Documents/Org/home.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -18,6 +18,9 @@ export PATH=$HOME/local/bin:$PATH
 export MANPATH=$HOME/local/man:$MANPATH
 # Android environment
 export PATH=$HOME/lib/android/tools:$PATH
+export PATH=$HOME/.gem/ruby/1.9.1/bin:$PATH
+export PATH=$HOME/.cabal/bin/:$PATH
+alias emacs='emacs -nw'
 alias sudo='sudo env PATH=$PATH'
 alias pu='pushd'
 alias po='popd'
@@ -28,7 +31,7 @@ alias epochtohum="perl -e 'print scalar(localtime(\$ARGV[0])),\"\\n\"'"
 # perl dirs solution
 alias dirs="dirs -p | perl -wnl -e 'print \"\$. \$_\"'"
 
-#eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
 # /usr/bin/luit
 # Run functions =
 futurama;

@@ -1,14 +1,18 @@
 *utf8: 1
-*font:     -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
-*wideFont: -misc-fixed-medium-r-normal-ja-18-120-100-100-c-180-iso10646-b1
-*background: #000000
-*foreground: green
+!*font:     -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
+XTerm*wideFont:  -misc-fixed-medium-r-normal-ja-13-120-75-75-c-120-iso10646-1
+!-misc-fixed-medium-r-normal-ja-18-120-100-100-c-180-iso10646-b1
+! XTerm*faceName: DejaVu Sans Mono:style=Book:antialias=false
+! XTerm*faceNameDoublesize: WenQuanYi Bitmap Song
+! XTerm*faceSize: 8
+XTerm*background: #000000
+XTerm*foreground: green
 *pointerColor: red
 *pointerColorBackground: black
 *cursorColor: navy
 *internalBorder: 3
 *loginShell: true
-*scrollBar: false
+*scrollBar: true
 *scrollKey: true
 *saveLines: 1000
 *multiClickTime: 250
@@ -18,3 +22,7 @@ Emacs.fontBackend: xft
 Emacs.menuBar: off
 Emacs.toolBar: -1
 Emacs.verticalScrollBars: off
+xterm*utf8: 1
+xterm*faceName: DejaVu
+xterm*faceNameDoublesize: TakaoExMincho
+xterm*faceSize: 10

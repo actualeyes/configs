@@ -3,8 +3,10 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory extendedglob nomatch notify
+setopt HIST_IGNORE_DUPS
 unsetopt autocd beep
 bindkey -e
+autoload -U colors && colors
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/apallatto/.zshrc'
