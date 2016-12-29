@@ -4,24 +4,26 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
-
+(package-initialize) 
 (setq load-path (cons "/home/apallatto/lib/emacs/" load-path))
 (add-to-list 'load-path "/home/apallatto/lib/emacs/imported/")
 (require 'tramp)
-(require 'notify)
+;;(require 'notify)
 
 (add-to-list 'load-path "/home/apallatto/lib/emacs/local/")
 (require 'org_prefs)
 (require 'perl_prefs)
-(require 'irc_prefs)
+(require 'beamer)
+(require 'whitespace)
+;;(require 'irc_prefs)
 (require 'automation)
 (require 'tramp_prefs)
 ;; Setup w3m
-(require 'w3m-e21)
-(provide 'w3m-e23)
-(setq w3m-use-cookies t)
-(setq w3m-default-display-inline-images t)
-(setq w3m-toggle-inline-images-permanently t)
+;;(require 'w3m-e21)
+;;(provide 'w3m-e23)
+;;(setq w3m-use-cookies t)
+;;(setq w3m-default-display-inline-images t)
+;;(setq w3m-toggle-inline-images-permanently t)
 
 ;; Setup Chrome Links
 (setq gnus-button-url 'browse-url-generic
@@ -29,7 +31,7 @@
       browse-url-browser-function gnus-button-url)
 (add-to-list 'load-path "/home/apallatto/.emacs.d/pde/")
 
-(require 'template-simple)
+;;(require 'template-simple)
 (load "pde-load")
 (ido-mode 1)
 (column-number-mode 1)
@@ -62,16 +64,34 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(erc-modules (quote (autojoin button completion fill irccontrols list log match menu move-to-prompt netsplit networks noncommands notify page readonly ring smiley stamp track)))
+ '(column-number-mode t)
+ '(erc-modules
+   (quote
+    (autojoin button completion fill irccontrols list log match menu move-to-prompt netsplit networks noncommands notify page readonly ring smiley stamp track)))
  '(erc-nick "actualeyes")
  '(erc-port 6667)
  '(erc-server "localhost")
- '(org-agenda-files (quote ("~/Documents/Org/Pulled.org" "~/Documents/Org/projects.org" "~/Documents/Org/work.org" "~/Documents/Org/home.org"))))
+ '(org-agenda-files
+   (quote
+    ("~/Documents/Org/home.org" "~/Documents/Org/work.org" "~/Documents/Org/Pulled.org")))
+ '(tool-bar-mode nil))
+
+
+
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "green" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "green" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "bitstream" :family "Bitstream Vera Sans Mono")))))
 
 (put 'scroll-left 'disabled nil)
+
+
+
+(setq-default whitespace-style '(face trailing tabs lines-tail newline))
+(setq-default whitespace-line-column 80)
+(global-whitespace-mode 1)
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
