@@ -33,18 +33,18 @@
 
 (eval-when-compile
   (require 'cl))
-(require 'org-ascii)
+;;(require 'org-ascii)
 
 (setq org-link-abbrev-alist
-      '(("bz" . "https://bz.cheetahmail.com/cgi-bin/show_bug.cgi?id=")))
+      '(("bz" . "https://www.esteeonline.com/bugzilla/intl/show_bug.cgi?id=%s")))
+
 
 (setq org-modules (quote
                    (org-bbdb org-bibtex org-gnus org-info
-                    org-jsinfo org-habit org-irc org-mew
-                    org-mhe org-rmail org-vm org-wl org-w3m)))
+                    org-habit org-irc org-w3m)))
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (setq org-agenda-custom-commands
-      '(("h" occur-tree "Habit")))
+      '(("b" occur-tree "habit")))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
@@ -53,15 +53,18 @@
 (setq org-log-done 'note) ;Timestamp and note  on close
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
+
+;; Habit Graph
+(setq org-habit-graph-column 60)
+(setq org-habit-show-habits-only-for-today t)
+
+
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)" "Failed(f@!)")))
+      '((sequence "TODO(t)" "PROGRESS(p@/!)" "RESCHEDULE(r!)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)" "Failed(f@!)")))
 
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
-(setq org-directory "~/Documents/Org/")
+;(setq org-directory "~/Documents/Org/")
 (setq org-mobile-inbox-for-pull "~/Documents/Org/Pulled.org")
-;; Tags
-;; (setq tags-table-list
-;; '("/ssh:devt1.cheetahmail.com:/home/apallatto/git/ops_devel/TAGS"))
 
 
 (provide 'org_prefs)

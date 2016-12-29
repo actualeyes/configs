@@ -1,4 +1,4 @@
-;;; perl_pref.el --- Anthony Pallatto's Perl related preferences
+;;; perl_prefs.el --- Anthony Pallatto's Perl related preferences
 
 ;; Copyright (C) 2010 Free Software Foundation, Inc.
 ;;
@@ -36,8 +36,8 @@
 
 ;; M-SPC not available, window manager take it away
 (global-set-key (kbd "M-'") 'just-one-space)
-(global-set-key (kbd "C-M-=") 'pde-indent-dwim)
-;; nearest key to dabbrev-expand
+(global-set-key (kbd "C-M-=") 'pde-indent-dwim) 
+;; nearest key to dabbrev-expand 
 (global-set-key (kbd "M-;") 'hippie-expand)
 (global-set-key (kbd "C-;") 'comment-dwim)
 (global-set-key (kbd "C-c f") 'comint-dynamic-complete)
