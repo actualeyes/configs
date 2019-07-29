@@ -19,11 +19,11 @@ compinit
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+. /etc/bashrc
 fi
 # Source work definitions
 if [ -f $HOME/lib/work/work_env.sh ]; then
-	. $HOME/lib/work/work_env.sh
+. $HOME/lib/work/work_env.sh
 fi
 
 #export LC_ALL=ja_JP

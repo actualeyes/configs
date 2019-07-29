@@ -35,9 +35,6 @@
   (require 'cl))
 ;;(require 'org-ascii)
 
-(setq org-link-abbrev-alist
-      '(("bz" . "https://www.esteeonline.com/bugzilla/intl/show_bug.cgi?id=%s")))
-
 
 (setq org-modules (quote
                    (org-bbdb org-bibtex org-gnus org-info
@@ -57,6 +54,11 @@
 ;; Habit Graph
 (setq org-habit-graph-column 60)
 (setq org-habit-show-habits-only-for-today t)
+(setq org-agenda-files
+   (quote
+    ("~/Documents/Org/home.org"
+     "~/Documents/Org/work.org"
+     "~/Documents/Org/calendar.org")))
 
 
 (setq org-todo-keywords
