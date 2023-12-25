@@ -2,7 +2,7 @@
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ("melpa" . "https://melpa.org/packages/")))
 
 (package-initialize) 
 (setq load-path (cons "/home/apallatto/lib/emacs/" load-path))
@@ -10,29 +10,24 @@
 (require 'tramp)
 ;;(require 'notify)
 
+(yas-global-mode t)
+
 (add-to-list 'load-path "/home/apallatto/lib/emacs/local/")
 (require 'org_prefs)
-(require 'perl_prefs)
-(require 'beamer)
+;; (require 'perl_prefs)
+(require 'coding_prefs)
+(require 'go_prefs)
+(require 'javascript_prefs)
+(require 'ruby_prefs)
 (require 'whitespace)
-;;(require 'irc_prefs)
-(require 'automation)
-(require 'tramp_prefs)
-;; Setup w3m
-;;(require 'w3m-e21)
-;;(provide 'w3m-e23)
-;;(setq w3m-use-cookies t)
-;;(setq w3m-default-display-inline-images t)
-;;(setq w3m-toggle-inline-images-permanently t)
 
 ;; Setup Chrome Links
 (setq gnus-button-url 'browse-url-generic
       browse-url-generic-program "chromium"
       browse-url-browser-function gnus-button-url)
-(add-to-list 'load-path "/home/apallatto/.emacs.d/pde/")
 
 ;;(require 'template-simple)
-(load "pde-load")
+;; (load "pde-load")
 (ido-mode 1)
 (column-number-mode 1)
 (tool-bar-mode -1)
@@ -44,19 +39,11 @@
 (setq auto-save-default nil)
 (setq inhibit-splash-screen t)
 (setq-default indent-tabs-mode nil)
+
 ;; Set line width to 78 columns
 (setq fill-column 78)
 (setq auto-fill-mode t)
 ;; default font size
-
-;; haskell-mode
-;;(load "/usr/share/emacs/site-lisp/haskell-mode/haskell-site-file")
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
-
-
 
 
 (custom-set-variables
@@ -66,14 +53,15 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(erc-modules
-   (quote
-    (autojoin button completion fill irccontrols list log match menu move-to-prompt netsplit networks noncommands notify page readonly ring smiley stamp track)))
+   '(autojoin button completion fill irccontrols list log match menu move-to-prompt netsplit networks noncommands notify page readonly ring smiley stamp track))
  '(erc-nick "actualeyes")
  '(erc-port 6667)
  '(erc-server "localhost")
+ '(markdown-command "lowdown")
  '(org-agenda-files
-   (quote
-    ("~/Documents/Org/home.org" "~/Documents/Org/work.org" "~/Documents/Org/Pulled.org")))
+   '("/home/apallatto/Documents/Org/home.org" "/home/apallatto/Documents/Org/work.org"))
+ '(package-selected-packages
+   '(rvm company-inf-ruby ac-inf-ruby ruby-test-mode flymake-ruby enh-ruby-mode auto-complete robe helm-robe rubocopfmt rubocop markdown-preview-mode markdown-preview-eww markdown-mode impatient-mode tree-sitter-langs tree-sitter company-restclient restclient-helm restclient prettier prettier-js xref-js2 web-mode unicode-fonts tide tern lsp-ui lsp-ivy js2-refactor helm-lsp gotest go-mode dap-mode company))
  '(tool-bar-mode nil))
 
 

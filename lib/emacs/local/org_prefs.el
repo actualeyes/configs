@@ -57,16 +57,15 @@
 (setq org-agenda-files
    (quote
     ("~/Documents/Org/home.org"
-     "~/Documents/Org/work.org"
-     "~/Documents/Org/calendar.org")))
+     "~/Documents/Org/work.org")))
 
 
 (setq org-todo-keywords
       '((sequence "TODO(t)" "PROGRESS(p@/!)" "RESCHEDULE(r!)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)" "Failed(f@!)")))
 
-(setq org-mobile-directory "~/Dropbox/MobileOrg")
-;(setq org-directory "~/Documents/Org/")
-(setq org-mobile-inbox-for-pull "~/Documents/Org/Pulled.org")
+;; (setq org-mobile-directory "~/Dropbox/MobileOrg")
+;; (setq org-directory "~/Documents/Org/")
+;; (setq org-mobile-inbox-for-pull "~/Documents/Org/Pulled.org")
 
 
 (provide 'org_prefs)

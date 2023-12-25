@@ -25,7 +25,7 @@ fi
 #export XMODIFIERS=@im=uim
 #export GTK_IM_MODULE="uim"
 trayer --edge top --align right --SetDockType true --SetPartialStrut true \
- --expand true --width 14 --transparent true --tint black --height 18 &
+ --expand true --width 14 --transparent true --height 18 &
 
 # if [ -x /usr/bin/uim-xim ] ; then
 #    uim-xim &
