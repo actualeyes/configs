@@ -57,6 +57,10 @@ fi
 #    conky &
 #fi
 
+if [ -x /usr/bin/nm-applet ] ; then
+    nm-applet &
+fi
+
 # Power Manager
 if [ -x /usr/bin/xfce4-power-manager ] ; then
    xfce4-power-manager &
