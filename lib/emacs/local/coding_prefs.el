@@ -4,7 +4,7 @@
 
 ;; M-SPC not available, window manager take it away
 (global-set-key (kbd "M-'") 'just-one-space)
-(global-set-key (kbd "C-M-=") 'pde-indent-dwim) 
+(global-set-key (kbd "C-M-=") 'pde-indent-dwim)
 ;; nearest key to dabbrev-expand 
 (global-set-key (kbd "M-;") 'hippie-expand)
 (global-set-key (kbd "C-;") 'comment-dwim)

@@ -11,6 +11,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+# Screenshot tool
+if [ -x /usr/bin/flameshot ]; then
+    flameshot &
+fi
 
 # Start a D-Bus session
 # source /etc/X11/xinit/xinitrc.d/30-dbus
@@ -41,14 +45,17 @@ if [ -x /usr/bin/emacs ] ; then
    emacs -f org-agenda-list  -T Org &
 fi
 
-if [ -x /usr/bin/emacs ] ; then
-   emacs -f erc-initiate-connections -T IM &
+#if [ -x /usr/bin/emacs ] ; then
+#   emacs -f erc-initiate-connections -T IM &
+#fi
+if [ -x /usr/bin/nm-applet ] ; then
+    nm-applet &
 fi
 
 # Conky
-if [ -x /usr/bin/conky ] ; then
-    conky &
-fi
+# if [ -x /usr/bin/conky ] ; then
+#    conky &
+#fi
 
 # Power Manager
 if [ -x /usr/bin/xfce4-power-manager ] ; then
@@ -77,17 +84,17 @@ if [ -x /usr/bin/xscreensaver ] ; then
    xscreensaver &
 fi
 
-if [ -x /usr/bin/keepassx ] ; then
-    keepassx &
+if [ -x /usr/bin/keepassxc ] ; then
+    keepassxc &
 fi
 
 if [ -x /usr/bin/w3m ] ; then
     emacs -f w3m -T EmacsWeb &
 fi
 
-if [ -x /usr/bin/xterm ] ; then
-    /usr/bin/env LANG=en_US.UTF-8 xterm -name WebConsole &
-    /usr/bin/env LANG=en_US.UTF-8 xterm -name EmacsConsole &
+if [ -x /usr/bin/urxvt ] ; then
+    /usr/bin/urxvt -name WebConsole &
+    /usr/bin/urxvt -name EmacsConsole &
 fi
 
 
