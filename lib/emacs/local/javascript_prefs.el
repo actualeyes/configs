@@ -41,34 +41,35 @@
 ;; Loading tree-sitter package
 (require 'tree-sitter-langs)
 (require 'tree-sitter)
-
+;; (require 'eslint-rc)
 ;; Activate tree-sitter globally (minor mode registered on every buffer)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 (require 'lsp-mode)
 (add-hook 'js-mode-hook #'lsp)
 (add-hook 'js-mode-hook 'prettier-js-mode)
+;; (add-hook 'js-mode-hook 'eslint-rc-mode)
 (add-hook 'typescript-mode-hook 'prettier-js-mode)
-(add-hook 'js-mode-hook (lambda () (electric-indent-mode -1)))
+;; (add-hook 'typescript-mode-hook 'eslint-rc-mode)
+;; (add-hook 'js-mode-hook (lambda () (electric-indent-mode -1)))
 (lsp-treemacs-sync-mode 1)
 (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol)
 
-
 ;; Typescript
-;; (defun setup-tide-mode ()
-;;   (interactive)
-;;   (tide-setup)
-;;   (flycheck-mode +1)
-;;   (setq flycheck-check-syntax-automatically '(save mode-enabled))
-;;   (eldoc-mode +1)
-;;   (tide-hl-identifier-mode +1)
-;;   ;; company is an optional dependency. You have to
-;;   ;; install it separately via package-install
-;;   ;; `M-x package-install [ret] company`
-;;   (company-mode +1))
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  ;; company is an optional dependency. You have to
+  ;; install it separately via package-install
+  ;; `M-x package-install [ret] company`
+  (company-mode +1))
 
 ;; aligns annotation to the right hand side
-;; (setq company-tooltip-align-annotations t)
+(setq company-tooltip-align-annotations t)
 ;; formats the buffer before saving
 ;; (add-hook 'before-save-hook 'prettier-js-mode)
 

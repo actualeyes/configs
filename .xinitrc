@@ -80,6 +80,10 @@ if [ -x /usr/bin/volumeicon ] ; then
     volumeicon &
 fi
 
+if [ -x /usr/bin/firefox ]; then
+		firefox &
+fi
+
 if [ -x /usr/bin/emacs ] ; then
    emacs -T EmacsConsole &
 fi
@@ -97,10 +101,8 @@ if [ -x /usr/bin/w3m ] ; then
 fi
 
 if [ -x /usr/bin/urxvt ] ; then
-    /usr/bin/urxvt -name WebConsole &
-    /usr/bin/urxvt -name EmacsConsole &
+    /usr/bin/urxvt -name WebConsole -e zsh -c "tmux" &
 fi
-
 
 if [ -x /usr/bin/wicd-client ] ; then
     wicd-client --tray &

@@ -16,13 +16,14 @@ myManageHook = composeAll
     , title     =? "EmacsConsole"      --> doF  (W.shift "emacs" )
     , title     =? "WebConsole"        --> doF  (W.shift "web"   )
     , title     =? "EmacsWeb"          --> doF  (W.shift "web"   )
-    , className =? "Chromium"          --> doF  (W.shift "main"   )
-    , className =? "Firefox"           --> doF  (W.shift "main"   )
-    , className =? "Mplayer"           --> doF  (W.shift "movie" )
+    , className =? "Chromium"          --> doF  (W.shift "web"   )
+    , title     =? "Mozilla Firefox"   --> doF  (W.shift "web"   )
+    , className =? "Dbeaver"           --> doF  (W.shift "db" )
+    , className =? "Postman"           --> doF  (W.shift "postman" )
     , className =? "Transmission"      --> doF  (W.shift "bt"    )
     , title     =? "Org"               --> doF  (W.shift "org"   )
     , title     =? "IM"                --> doF  (W.shift "im"    )
-    , className =? "Keepassx"          --> doF  (W.shift "keys"  )
+    , className =? "KeePassXC"          --> doF  (W.shift "keys"  )
     , className =? "Mplayer"           --> doFloat
     , className =? "trayer"            --> doIgnore
     ]
@@ -62,8 +63,8 @@ mylayoutHook = onWorkspace "web" myWebLayout$
 main = do
   xmproc <- spawnPipe "/usr/bin/xmobar /home/apallatto/.xmobarrc"
   xmonad $ desktopConfig {
-                terminal = "/usr/bin/env LANG=en_US.UTF-8 /usr/bin/xterm",
-                workspaces = ["main","web","emacs","term","im","org","movie","keys","docs"],
+                terminal = "/usr/bin/urxvt -e zsh -c 'tmux'",
+                workspaces = ["main","emacs","web","postman","db","org","rdp","keys","docs"],
                 manageHook = myManageHook <+> manageDocks <+> manageHook desktopConfig,
                 layoutHook = avoidStruts $ mylayoutHook,
                 logHook = dynamicLogWithPP $ xmobarPP {

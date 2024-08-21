@@ -10,16 +10,17 @@
 (require 'tramp)
 ;;(require 'notify)
 
-(yas-global-mode t)
+;; (yas-global-mode t)
 
 (add-to-list 'load-path "/home/apallatto/lib/emacs/local/")
 (require 'org_prefs)
 ;; (require 'perl_prefs)
 (require 'coding_prefs)
-(require 'go_prefs)
+;; (require 'go_prefs)
 (require 'javascript_prefs)
-(require 'ruby_prefs)
-(require 'whitespace)
+
+;; (require 'ruby_prefs)
+;; (require 'whitespace)
 
 ;; Setup Chrome Links
 (setq gnus-button-url 'browse-url-generic
@@ -28,6 +29,7 @@
 
 ;;(require 'template-simple)
 ;; (load "pde-load")
+
 (ido-mode 1)
 (column-number-mode 1)
 (tool-bar-mode -1)
@@ -38,8 +40,8 @@
 ;; Global Preferences 
 (setq auto-save-default nil)
 (setq inhibit-splash-screen t)
-(setq-default indent-tabs-mode nil)
-
+;; (setq-default indent-tabs-mode t)
+(setq-default tab-width 2)
 ;; Set line width to 78 columns
 (setq fill-column 78)
 (setq auto-fill-mode t)
@@ -53,15 +55,14 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(erc-modules
-   '(autojoin button completion fill irccontrols list log match menu move-to-prompt netsplit networks noncommands notify page readonly ring smiley stamp track))
+	 '(autojoin button completion fill irccontrols list log match menu move-to-prompt netsplit networks noncommands notify page readonly ring smiley stamp track))
  '(erc-nick "actualeyes")
  '(erc-port 6667)
  '(erc-server "localhost")
  '(markdown-command "lowdown")
- '(org-agenda-files
-   '("/home/apallatto/Documents/Org/home.org" "/home/apallatto/Documents/Org/work.org"))
+ '(org-agenda-files '("/home/apallatto/Documents/Org/work.org"))
  '(package-selected-packages
-   '(rvm company-inf-ruby ac-inf-ruby ruby-test-mode flymake-ruby enh-ruby-mode auto-complete robe helm-robe rubocopfmt rubocop markdown-preview-mode markdown-preview-eww markdown-mode impatient-mode tree-sitter-langs tree-sitter company-restclient restclient-helm restclient prettier prettier-js xref-js2 web-mode unicode-fonts tide tern lsp-ui lsp-ivy js2-refactor helm-lsp gotest go-mode dap-mode company))
+	 '(feature-mode prisma-ts-mode imenu-list flycheck eslint-rc ox-json org prettier-rc prettier typescript-mode company-restclient restclient tree-sitter))
  '(tool-bar-mode nil))
 
 

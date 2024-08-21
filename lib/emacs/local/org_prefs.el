@@ -34,7 +34,7 @@
 (eval-when-compile
   (require 'cl))
 ;;(require 'org-ascii)
-
+(require 'ox-json)
 
 (setq org-modules (quote
                    (org-bbdb org-bibtex org-gnus org-info
