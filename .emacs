@@ -19,6 +19,7 @@
 (require 'coding_prefs)
 ;; (require 'go_prefs)
 (require 'javascript_prefs)
+(require 'ai_prefs)
 
 ;; (require 'ruby_prefs)
 ;; (require 'whitespace)
@@ -64,9 +65,9 @@
  '(erc-server "localhost")
  '(markdown-command "lowdown")
  '(package-selected-packages
-   '(agent-shell company dockerfile-mode dotenv-mode eslint-rc
-                 lsp-treemacs prettier-js tide tree-sitter-langs
-                 typescript-mode web-mode yaml-mode))
+   '(agent-shell company compat dockerfile-mode dotenv-mode eslint-rc
+                 gptel lsp-treemacs prettier-js tide tree-sitter-langs
+                 transient typescript-mode web-mode yaml-mode))
  '(tool-bar-mode nil))
 
 (setq backup-directory-alist `(("." . ,(expand-file-name "~/.emacs.d/backups/" user-emacs-directory))))
