@@ -31,25 +31,22 @@
 
 ;;; Code:s
 
-(eval-when-compile
-  (require 'cl))
-
 ;; (require 'js2-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 
 ;; Loading tree-sitter package
-(require 'tree-sitter-langs)
-(require 'tree-sitter)
+;;(require 'tree-sitter-langs)
+;;(require 'tree-sitter)
 ;; (require 'eslint-rc)
 ;; Activate tree-sitter globally (minor mode registered on every buffer)
-(global-tree-sitter-mode)
-(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+;; (global-tree-sitter-mode)
+;; (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 (require 'lsp-mode)
 (add-hook 'js-mode-hook #'lsp)
-(add-hook 'js-mode-hook 'prettier-js-mode)
+;; (add-hook 'js-mode-hook 'prettier-js-mode)
 ;; (add-hook 'js-mode-hook 'eslint-rc-mode)
-(add-hook 'typescript-mode-hook 'prettier-js-mode)
+;;(add-hook 'typescript-mode-hook 'prettier-js-mode)
 ;; (add-hook 'typescript-mode-hook 'eslint-rc-mode)
 ;; (add-hook 'js-mode-hook (lambda () (electric-indent-mode -1)))
 (lsp-treemacs-sync-mode 1)
@@ -74,8 +71,8 @@
 ;; (add-hook 'before-save-hook 'prettier-js-mode)
 
 (add-hook 'typescript-mode-hook 'lsp-deferred)
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
 (add-hook 'typescript-mode-hook (lambda () (electric-indent-mode -1)))
-
 ;; (setq tide-format-options '(
 ;;     :insertSpaceAfterFunctionKeywordForAnonymousFunctions t
 ;;     :placeOpenBraceOnNewLineForFunctions nil
@@ -86,6 +83,7 @@
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode ))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode ))
+
 (add-hook 'web-mode-hook
           (lambda ()
             (when

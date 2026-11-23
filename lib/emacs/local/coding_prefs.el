@@ -1,7 +1,4 @@
 
-(eval-when-compile
-  (require 'cl))
-
 ;; M-SPC not available, window manager take it away
 (global-set-key (kbd "M-'") 'just-one-space)
 (global-set-key (kbd "C-M-=") 'pde-indent-dwim)

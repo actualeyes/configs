@@ -1,18 +1,19 @@
+(package-initialize)
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+
+;;                          ("melpa" . "https://melpa.org/packages/")))
+
 (setq visible-bell 1)
-
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "https://melpa.org/packages/")))
-
-(package-initialize) 
-(setq load-path (cons "/home/apallatto/lib/emacs/" load-path))
-(add-to-list 'load-path "/home/apallatto/lib/emacs/imported/")
 (require 'tramp)
 ;;(require 'notify)
 
 ;; (yas-global-mode t)
 
-(add-to-list 'load-path "/home/apallatto/lib/emacs/local/")
+(add-to-list 'load-path "/Users/anthonypallatto/lib/emacs/local/")
 (require 'org_prefs)
 ;; (require 'perl_prefs)
 (require 'coding_prefs)
@@ -40,7 +41,7 @@
 ;; Global Preferences 
 (setq auto-save-default nil)
 (setq inhibit-splash-screen t)
-;; (setq-default indent-tabs-mode t)
+(setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 ;; Set line width to 78 columns
 (setq fill-column 78)
@@ -55,17 +56,20 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(erc-modules
-	 '(autojoin button completion fill irccontrols list log match menu move-to-prompt netsplit networks noncommands notify page readonly ring smiley stamp track))
+   '(autojoin button completion fill irccontrols list log match menu
+              move-to-prompt netsplit networks noncommands notify page
+              readonly ring smiley stamp track))
  '(erc-nick "actualeyes")
  '(erc-port 6667)
  '(erc-server "localhost")
  '(markdown-command "lowdown")
- '(org-agenda-files '("/home/apallatto/Documents/Org/work.org"))
  '(package-selected-packages
-	 '(feature-mode prisma-ts-mode imenu-list flycheck eslint-rc ox-json org prettier-rc prettier typescript-mode company-restclient restclient tree-sitter))
+   '(agent-shell company dockerfile-mode dotenv-mode eslint-rc
+                 lsp-treemacs prettier-js tide tree-sitter-langs
+                 typescript-mode web-mode yaml-mode))
  '(tool-bar-mode nil))
 
-
+(setq backup-directory-alist `(("." . ,(expand-file-name "~/.emacs.d/backups/" user-emacs-directory))))
 
 
 (custom-set-faces

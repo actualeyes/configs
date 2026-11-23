@@ -31,22 +31,15 @@
 
 ;;; Code:
 
-(eval-when-compile
-  (require 'cl))
 ;;(require 'org-ascii)
-(require 'ox-json)
+;; (require 'ox-json)
 
-(setq org-modules (quote
-                   (org-bbdb org-bibtex org-gnus org-info
-                    org-habit org-irc org-w3m)))
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(setq org-modules '(ol-bbdb ol-bibtex ol-gnus ol-info org-habit ol-irc ol-w3m))
 (setq org-agenda-custom-commands
       '(("b" occur-tree "habit")))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-(global-font-lock-mode 1)                     ; for all buffers
-(add-hook 'org-mode-hook 'turn-on-font-lock)  ; Org buffers only
+(global-set-key "\C-cb" 'org-switchb)
 (setq org-log-done 'note) ;Timestamp and note  on close
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
@@ -56,8 +49,7 @@
 (setq org-habit-show-habits-only-for-today t)
 (setq org-agenda-files
    (quote
-    ("~/Documents/Org/home.org"
-     "~/Documents/Org/work.org")))
+    ("~/Documents/Org/work.org")))
 
 
 (setq org-todo-keywords
